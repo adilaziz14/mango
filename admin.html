@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            /* animation: bg-animation 10s ease infinite; */
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 7px 2px #ccc;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #bd8e8e;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #e1a9cb;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        input[type="submit"]:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #e5f2eb;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        input[type="submit"]:hover:before {
+            left: 0;
+        }
+
+        /* background animation */
+        @keyframes bg-animation {
+            0% {
+                background-color: #e8d1d9;
+            }
+
+            25% {
+                background-color: #d4e7e8;
+            }
+
+            50% {
+                background-color: #ec9b98;
+            }
+
+            75% {
+                background-color: #b0a891;
+            }
+
+            100% {
+                background-color: #b2b9b2ed;
+            }
+        }
+
+        /* responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+                padding-top: 30px;
+            }
+        }
+
+        /* 
+        <title>Login</title><style>body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        } */
+
+        .container {
+            margin: 0 auto;
+            width: 50%;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            color: #ff6600;
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px #666;
+            margin-bottom: 50px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px #ccc;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: skyblue;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-shadow: 1px 1px #666;
+        }
+
+        input[type="submit"]:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color:green;
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        input[type="submit"] {
+            font-size: 1.4em;
+            padding: 08px 18px;
+        }
+
+
+
+        /* background animation */
+        /* body:before {
+            content: "";
+            z-index: -1;
+            background-image: url("https://i.imgur.com/kINyMeC.png");
+            background-size: cover;
+            filter: blur(10px);
+        } */
+
+        .navbar-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            box-shadow: 2px 2px 6px -4px black;
+            width: 100vw;
+            margin: 0;
+            padding: 10px 20px;
+            background-color:white;
+        }
+
+        /* responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 80%;
+                padding-top: 30px;
+            }
+
+            h1 {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container" style="background-color:#477245; width: 100vw">
+        <div class="is-flex align-items-center justify-content-end">
+          <div class="mar-x-3 no-margin-right top_link">
+            <a href="/career/" target="_self" class="" rel="noopener">
+              
+            </a>
+          </div>
+        </div>
+      </div>
+    <div class="navbar-container">
+        
+        <div>
+            <a href="https://coredge.io/">
+            <svg width="180" height="36" viewBox="0 0 171 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_86_493)">
+                    <path
+                        d="M55.5512 8.63786C59.7094 8.63786 63.0903 10.8178 64.3512 14.5732H60.0322C59.1465 12.813 57.537 11.9472 55.5255 11.9472C52.2519 11.9472 49.9187 14.2846 49.9187 18.0137C49.9187 21.7428 52.253 24.0802 55.5255 24.0802C57.5382 24.0802 59.1476 23.2132 60.0322 21.4279H64.3512C63.0903 25.2095 59.7094 27.3632 55.5512 27.3632C50.1588 27.3632 46.0542 23.5029 46.0542 18.0148C46.0542 12.5266 50.1588 8.63895 55.5512 8.63895V8.63786Z"
+                        fill="#2D2C2C" />
+                    <path
+                        d="M76.263 27.3884C70.9779 27.3884 66.6577 23.5018 66.6577 17.9863C66.6577 12.4708 70.9768 8.61053 76.263 8.61053C81.5493 8.61053 85.8416 12.4971 85.8416 17.9863C85.8416 23.4756 81.5761 27.3884 76.263 27.3884ZM76.263 24.1053C79.6439 24.1053 81.9771 21.7155 81.9771 17.9863C81.9771 14.2572 79.6428 11.9198 76.263 11.9198C72.8833 11.9198 70.5211 14.2572 70.5211 17.9863C70.5211 21.7155 72.8554 24.1053 76.263 24.1053Z"
+                        fill="#2D2C2C" />
+                    <path
+                        d="M95.6614 8.874C100.169 8.874 102.422 11.4213 102.422 14.4934C102.422 16.7258 101.161 18.9845 98.1565 19.7716L102.638 27.2036H98.2905L94.1591 20.0603H92.3877V27.2036H88.6316V8.874H95.6614ZM95.5273 11.9198H92.3877V17.303H95.5273C97.6204 17.303 98.5586 16.2262 98.5586 14.5721C98.5586 12.918 97.6193 11.9198 95.5273 11.9198Z"
+                        fill="#2D2C2C" />
+                    <path
+                        d="M116.695 11.8422H109.585V16.4383H115.889V19.3529H109.585V24.2114H116.695V27.2047H105.828V8.84776H116.695V11.8411V11.8422Z"
+                        fill="#2D2C2C" />
+                    <path
+                        d="M136.522 18.0661C136.522 23.6068 132.632 27.2047 126.648 27.2047H120.102V8.874H126.648C132.632 8.874 136.522 12.4982 136.522 18.065V18.0661ZM126.514 24.0802C130.458 24.0802 132.685 21.874 132.685 18.0661C132.685 14.2583 130.458 11.9734 126.514 11.9734H123.858V24.0802H126.514Z"
+                        fill="#2D2C2C" />
+                    <path
+                        d="M156.696 14.3895H152.376C151.517 12.8404 149.962 12.0259 147.977 12.0259C144.623 12.0259 142.288 14.3633 142.288 18.0137C142.288 21.6641 144.65 24.0539 148.138 24.0539C151.035 24.0539 152.887 22.4261 153.45 19.8263H147.011V17.0166H157.152V20.221C156.4 23.9501 152.994 27.3643 148.004 27.3643C142.558 27.3643 138.425 23.504 138.425 18.0159C138.425 12.5277 142.556 8.64005 147.977 8.64005C152.162 8.64005 155.489 10.7151 156.696 14.3917V14.3895Z"
+                        fill="#2D2C2C" />
+                    <path
+                        d="M170.808 11.8422H163.698V16.4383H170.003V19.3529H163.698V24.2114H170.808V27.2047H159.942V8.84776H170.808V11.8411V11.8422Z"
+                        fill="#2D2C2C" />
+                    <path
+                        d="M21.8968 15.9212C21.2032 14.9339 20.0372 14.2867 18.7136 14.2867C16.5871 14.2867 14.8637 15.9594 14.8637 18.0235C14.8637 20.0876 16.5871 21.7603 18.7136 21.7603C20.618 21.7603 22.1961 20.4167 22.5055 18.6532L36.7862 18.6478V17.9995C36.7851 8.07483 28.5345 0 18.3931 0C8.25165 0 0 8.07483 0 18.0005C0 27.9263 8.25053 35.9956 18.3931 36.0011C29.5978 36.0077 34.4295 26.8275 34.4295 26.8275L27.5081 23.6855L26.9307 24.6662C24.8354 27.865 22.6675 28.9452 18.3473 28.9452C12.1865 28.9452 7.17384 24.0353 7.17384 18.0016C7.17384 11.9679 12.1865 7.05809 18.3473 7.05809C21.3305 7.05809 24.1362 8.19618 26.246 10.2613L21.8968 15.9233V15.9212Z"
+                        fill="#2D2C2C" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_86_493">
+                        <rect width="170.809" height="36" fill="white" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </a>
+        </div>
+
+
+    </div>
+	<div>
+		<ul style="display: flex;justify-content: center; column-gap: 15px; list-style-type: none; margin: 0;">
+		<li><a href="add" >Add User</a></li>
+		
+		
+		<li><a href="users" >Users list</a></li>
+		
+		<a href="/logout">Logout</a>
+		</ul>
+	</div>
+	
+	<div class="container">
+	<div class="box">
+	<div class="link-box">
+	<a href="Rafay" id="cloud-link">Rafay</a>
+	</div>
+	</div>
+	<div class="container"></div>
+	<div class="box">
+		<div class="link-box">
+			<a href="Spectrocloud" id="cloud-link">Spectrocloud</a>
+	
+		</div>
+	</div>
+</div>
+	
+	
+	
+	</div>
+	
+	
+	<!-- // <p><a href="/logout">Logout</a></p> -->
+	</body>
+	</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Add User</title>
+    <style>
+      .add-user-box {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        width: 400px;
+        margin: 0 auto;
+        background-color: #f9f9f9;
+      }
+
+      .add-user-box h2 {
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+
+      .add-user-box label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .add-user-box input[type="text"],
+      .add-user-box input[type="email"],
+      .add-user-box input[type="password"],
+      .add-user-box select {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+      }
+
+      .add-user-box button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .add-user-box button[type="submit"]:hover {
+        background-color: #0062cc;
+      }
+    </style>
+  </head>
+  <body>
+   
+    <div class="add-user-box">
+      <h2>Add User</h2>
+      <form action="/add" method="POST">
+          
+        <label for="username">Name:</label>
+        <input type="text" id="username" name="username">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <label for="user-type">User Type:</label>
+        <select id="user-type" name="user-type">
+          <option value="admin">Admin</option>
+          <option value="non-admin">Non-Admin</option>
+        </select>
+        <button type="submit">Submit</button>
+        {% if error %}
+          <p style="color: red">{{ error }}</p>
+        {% endif %}
+        <a href="/logout">Logout</a>
+      </form>
+    </div>
+  </body>
+</html>

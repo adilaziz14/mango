@@ -1,0 +1,77 @@
+<style>
+	body {
+	  background-color: #f2f2f2;
+	  font-family: Arial, sans-serif;
+	}
+	h1 {
+	  text-align: center;
+	}
+	form {
+	  width: 400px;
+	  margin: 0 auto;
+	  background-color: #fff;
+	  padding: 20px;
+	  border: 1px solid #ccc;
+	  border-radius: 5px;
+	  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	}
+	label {
+	  display: block;
+	  margin-bottom: 10px;
+	}
+	input[type="text"],
+	select {
+	  padding: 10px;
+	  border-radius: 5px;
+	  border: 1px solid #ccc;
+	  margin-bottom: 20px;
+	  width: 100%;
+	  font-size: 16px;
+	}
+	button[type="submit"] {
+	  padding: 10px 20px;
+	  background-color: #007bff;
+	  color: #fff;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  font-size: 16px;
+	}
+	button[type="submit"]:hover {
+	  background-color: #0069d9;
+	}
+	.error-message {
+	  color: red;
+	  margin-top: 10px;
+	}
+  </style>
+  
+  <body>
+	<h1>Change User Role</h1>
+	<form method="post" action="change" onsubmit="return validateForm()">
+	  <label for="username">Username:</label>
+	  <input type="text" name="username" id="username">
+  
+	  <label for="new-role">New Role:</label>
+	  <select name="new-role" id="new-role">
+		<option value="admin">Admin</option>
+		<option value="non-admin">Non-admin</option>
+	  </select>
+  
+	  <button type="submit">Save Changes</button>
+	  <a href="/logout">Logout</a>
+	  <div id="error-message" class="error-message"></div>
+	</form>
+  
+	<script>
+	  function validateForm() {
+		const username = document.getElementById("username").value;
+		if (username.trim() === "") {
+		  document.getElementById("error-message").innerHTML = "Please enter a correct username.";
+		  return false;
+		}
+		return true;
+	  }
+	</script>
+  </body>
+  

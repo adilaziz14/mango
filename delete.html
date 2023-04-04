@@ -1,0 +1,66 @@
+<style>
+  body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .form-container {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  label {
+    margin-bottom: 10px;
+  }
+  input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button[type="submit"]:hover {
+    background-color: #0069d9;
+  }
+  .error {
+    color: red;
+    margin-top: 10px;
+  }
+</style>
+
+<body>
+  <div class="form-container">
+    <form method="POST">
+      <label>Username<label>
+      <input type="username" name="username" value="" required>
+
+      <button type="submit">Delete User</button>
+
+      {% if error %}
+      <div class="error">{{ error }}</div>
+      {% endif %}
+      <a href="/logout">Logout</a>
+    </form>
+  </div>
+</body>
+
