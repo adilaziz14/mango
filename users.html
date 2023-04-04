@@ -65,73 +65,167 @@
       }
     </style>
   </head>
+  
+  <!DOCTYPE html>
+<html>
   <head>
+    <title>User Details</title>
     <style>
-      .square {
-        width: 10px;
-        height: 10px;
-        background-color: white;
+      table,
+      th,
+      td {
         border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+        text-align: center;
+      }
+
+      .checkbox {
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        display: inline-block;
         cursor: pointer;
       }
-      .square.active {
-        background-color: black;
+
+      .checked {
+        content: '\\2714';
+        font-size: 18px;
+        color: green;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
       }
-      .dropdown-content {
+
+      .actions-container {
         display: none;
-        position: absolute;
-        z-index: 1;
-        background-color: #f9f9f9;
-        min-width: 120px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        padding: 12px 16px;
+        margin-top: 10px;
       }
     </style>
   </head>
-  <body>
-    <h1>All Users</h1>
-    <div style="display: flex; justify-content: space-between; margin-bottom: 20px;"></div>
-    <form action="/delete" method="POST">
+
+
+  
+  <html>
+    <head>
+      <title>User Details</title>
+    </head>
+    <body>
+      <h1>User Details</h1>
+      <div class="actions-container">
+        <button id="delete-user-btn">Delete User</button>
+        <button id="change-role-btn">Change Role</button>
+      </div>
       <table>
         <tr>
+          <th>Select</th>
           <th>Username</th>
           <th>Email</th>
+          <th>Password</th>
           <th>User Type</th>
-          <th>Actions</th>
         </tr>
         {% for user in users %}
         <tr>
-          <td><a href="/profile/{{ user['username'] }}">{{ user['username'] }}</a></td>
-          <td>{{ user['email'] }}</td>
-          <td>{{ user['user_type'] }}</td>
           <td>
-            <div class="dropdown">
-              <div class="square" onclick="toggleDropdown(this, '{{ user['username'] }}')"></div>
-              <div class="dropdown-content">
-                <li><button type="submit" name="username" value="{{ user['username'] }}" onclick="return confirm('Are you sure you want to delete {{ user['username'] }}?')">Delete user</button></li>
-                <li><a href="/change_password">Change password</a></li>
-                <li>
-                  <div class="change">
-                    <form action="/change" method="POST">
-                      <input type="hidden" name="username" value="{{ user['username'] }}">
-                      {% if user['user_type'] == 'admin' %}
-                      <button type="submit" name="user_type" value="non admin">Non-Admin</button>
-                      {% else %}
-                      <button type="submit" name="user_type" value="admin"> Admin</button>
-                      {% endif %}
-                    </form>
-                  </div>
-                </li>
-              </div>
+            <div class="square-box">
+              <div class="square"></div>
             </div>
           </td>
+          <td><a href="/profile/{{ user['username'] }}">{{ user['username'] }}</a></td>
+          <td>{{ user['email'] }}</td>
+          <td>
+            <div class="password-field">
+              <input type="password" value="{{ user['password'] }}" readonly>
+              <button class="toggle-password" type="button">&#x1F441;</button>
+            </div>
+          </td>
+          <td>{{ user['user_type'] }}</td>
         </tr>
         {% endfor %}
       </table>
-    </form>
-  </body>
+    
+      <script>
+        const squareBoxBtns = document.querySelectorAll('.square-box');
+        squareBoxBtns.forEach(btn => {
+          const square = btn.querySelector('.square');
+          btn.addEventListener('click', () => {
+            if (square.classList.contains('selected')) {
+              square.classList.remove('selected');
+              const actionsContainer = document.querySelector('.actions-container');
+              actionsContainer.style.display = 'none';
+            } else {
+              square.classList.add('selected');
+              const actionsContainer = document.querySelector('.actions-container');
+              actionsContainer.style.display = 'block';
+            }
+          });
+        });
+    
+        const passwordFields = document.querySelectorAll('.password-field');
+        passwordFields.forEach(field => {
+          const input = field.querySelector('input');
+          const toggleBtn = field.querySelector('.toggle-password');
+          toggleBtn.addEventListener('click', () => {
+            if (input.type === 'password') {
+              input.type = 'text';
+            } else {
+              input.type = 'password';
+            }
+          });
+        });
+    
+        const deleteBtn = document.getElementById('delete-user-btn');
+        deleteBtn.addEventListener('click', () => {
+          // Perform delete user action
+          console.log('User deleted');
+        });
+    
+        const changeRoleBtn = document.getElementById('change-role-btn');
+        changeRoleBtn.addEventListener('click', () => {
+          // Perform change user role action
+          console.log('User role changed');
+        });
+      </script>
+    
+      <style>
+        .square-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30px;
+          height: 30px;
+          background-color: #fff;
+          border: 1px solid #ccc;
+        }
+    
+        .square {
+          width: 20px;
+          height: 20px;
+          border: 1px solid #ccc;
+        }
+    
+        .selected .square {
+          background-color: #00c853;
+          border-color: #00c853;
+        }
+    
+        .password-field {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+    
+        .password-field input {
+          padding-right: 35px;
+        }
+    
+        .password-field .toggle-password {
+          position
+    
   
+
+
+          
 
   
 </html>
-
